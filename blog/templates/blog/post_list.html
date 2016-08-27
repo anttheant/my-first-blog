@@ -7,12 +7,15 @@
 		<div>
 			<h1>Behold!</h1>
 		</div>
-		<div>			
-			<p> Things I like:</p>
-			<p><ul><li>Capybaras</li><li>Coffee</li><li>Game of Thrones</li></ul></p>
-			<p>Things I don't like:</p>
-			<p><ol><li>Headaches</li><li>Sticky Hands</li><li>Nulli und Priesemut</li></ol></p>
-		</div>
+
+		{% for post in posts %}	
+			<div>		
+				<h2><a href="">{{ post.title }}</a></h2>
+				<p>published: {{ post.published_date }}</p>
+				<p>{{post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
+
 	</body>
 
 
